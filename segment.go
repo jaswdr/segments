@@ -34,3 +34,11 @@ func Start() Segment {
 func NewSegment() Segment {
 	return Segment{}
 }
+
+func Wrap(fn func()) Segment {
+    s := NewSegment()
+    s.Start()
+    fn()
+    s.Stop()
+    return s
+}

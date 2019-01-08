@@ -14,11 +14,18 @@ import (
 )
 
 func main() {
-    s := segments.Start()
-    // make some expensive operation
-    s.Stop()
+    s1 := segments.Start()
+    // expensive operation
+    s1.Stop()
 
-    fmt.Printf("Elapse: %v", s.Diff())
+    fmt.Printf("Elapse: %v", s1.Diff())
+
+    // Wrapping a function
+    s2 := segments.Wrap(func() {
+        // expensive operation
+    })
+
+    fmt.Printf("Elapse: %v", s2.Diff())
 }
 ```
 

@@ -33,3 +33,13 @@ func TestDiff(t *testing.T) {
         t.Errorf("Expecting 1 second of difference, found %d", diff)
     }
 }
+
+func TestWrap(t *testing.T) {
+    s := Wrap(func() {
+        time.Sleep(time.Second)
+    })
+    diff := int(math.Round(s.Diff().Seconds()))
+    if diff != 1 {
+        t.Errorf("Expecting 1 second of difference, found %d", diff)
+    }
+}
