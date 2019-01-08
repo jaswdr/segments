@@ -5,8 +5,9 @@ import (
 )
 
 type Segment struct {
-	From time.Time
-	To   time.Time
+	Name string    `json:"name"`
+	From time.Time `json:"from"`
+	To   time.Time `json:"to"`
 }
 
 func (s *Segment) Start() {
@@ -25,20 +26,20 @@ func (s *Segment) Diff() (d time.Duration) {
 	return s.To.Sub(s.From)
 }
 
-func Start() Segment {
-	s := NewSegment()
+func Start(name string) Segment {
+	s := NewSegment(name)
 	s.Start()
 	return s
 }
 
-func NewSegment() Segment {
-	return Segment{}
+func NewSegment(name string) Segment {
+	return Segment{Name: name}
 }
 
-func Wrap(fn func()) Segment {
-    s := NewSegment()
-    s.Start()
-    fn()
-    s.Stop()
-    return s
+func Wrap(name string, fn func()) Segment {
+	s := NewSegment(name)
+	s.Start()
+	fn()
+	s.Stop()
+	return s
 }
