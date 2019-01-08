@@ -1,6 +1,7 @@
 # Segments 
 
 [![Build Status](https://travis-ci.com/jaswdr/segments.svg?branch=master)](https://travis-ci.com/jaswdr/segments)
+[![codecov](https://codecov.io/gh/jaswdr/segments/branch/master/graph/badge.svg)](https://codecov.io/gh/jaswdr/segments)
 [![Maintainability](https://api.codeclimate.com/v1/badges/de70193c532a883b77ac/maintainability)](https://codeclimate.com/github/jaswdr/segments/maintainability)
 
 > Monitor and record segments of expensive code
