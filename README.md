@@ -1,4 +1,4 @@
-# Segments
+# Segments [![Build Status](https://travis-ci.com/jaswdr/segments.svg?branch=master)](https://travis-ci.com/jaswdr/segments)
 
 > Monitor and record segments of expensive code
 
